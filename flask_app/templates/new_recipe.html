@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_recipe.css') }}">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="left-nav">
+            <h1>Add A New Recipe</h1>
+        </div>
+        <div class="right-nav">
+            <a href="/recipes" class="link">Back To Recipes</a>
+            <a href="/logout" class="link">Logout</a>
+        </div>
+    </div>
+    <form action="/recipes/create" method="post" id="form">
+        <div class="form">
+            <div class="left-form">
+                <div class="name">
+                    <label for="name" class="label">Name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="description">
+                    <label for="description" class="label">Description:</label>
+                    <textarea name="description" id="description" cols="30" rows="3"></textarea>
+                </div>
+                <div class="instructions">
+                    <label for="instructions" class="label">Instructions:</label>
+                    <textarea name="instructions" id="instructions" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="right-form">
+                <div class="date_cooked">
+                    <label for="date_cooked" class="label">Date Cooked:</label>
+                    <input type="date" name="date_cooked" id="date_cooked">
+                </div>
+                <div class="under-thirty">
+                    <label class="label">Under Thirty Minutes:</label>
+                    <input type="radio" name="under_thirty" value={{True}} id="yes">
+                    <label for="under_thirty" class="label">Yes</label>
+                    <input type="radio" name="under_thirty" value={{False}} id="no">
+                    <label for="under_thirty" class="label">No</label>
+                </div>
+                <div class="submit">
+                    <button class="submit-button">Create New Recipe</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

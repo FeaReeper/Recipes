@@ -1,0 +1,64 @@
+* {
+    margin: 10px auto;
+}
+
+.form {
+    background-color: #34393e;
+    display: flex;
+    justify-content: space-evenly;
+    width: 1000px;
+}
+
+.left-form, .right-form {
+    margin: 10px;
+    width: 500px;
+}
+
+.nav-bar {
+    width: 1000px;
+    background-color: #34393e;
+    display: flex;
+    align-items: center;
+}
+
+.right-nav {
+    display: flex;
+    width: 250px;
+}
+
+h1, .link {
+    color: #057afe;
+}
+
+.description, .instructions, .name {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+#name, #description, #instructions {
+    padding: 5px;
+    width: 250px;
+}
+
+.under-thirty {
+    margin: 30px 0px;
+}
+
+.submit {
+    margin: 50px 0px;
+}
+
+.submit-button {
+    background-color: #057afe;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px black;
+    font-weight: bolder;
+}

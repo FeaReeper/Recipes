@@ -1,0 +1,45 @@
+* {
+    margin: 10px auto;
+}
+
+.nav-bar, .recipe-table {
+    background-color: #34393e;
+    padding: 10px;
+    width: 1000px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    font-size: 35px;
+    color: #057afe;
+}
+
+.bottom-right {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link, p {
+    color: #057afe;
+    font-size: 20px;
+}
+
+th, td {
+    padding: 0px 60px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.white {
+    color: white;
+}

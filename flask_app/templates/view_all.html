@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view_all.css') }}">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="top-nav">
+            <h1>Welcome {{user.first_name}}</h1>
+        </div>
+        <div class="bottom-nav">
+            <div class="bottom-left">
+                <p>All posted recipes:</p>
+            </div>
+            <div class="bottom-right">
+                <a href="/recipes/new" class="link">+ Create</a>
+                <a href="/logout" class="link">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="recipe-table">
+        <table>
+            <tr class="headers">
+                <th>Name</th>
+                <th>Under 30</th>
+                <th>Posted By</th>
+                <th>Actions</th>
+            </tr>
+            {% for recipe in recipes: %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    {% if recipe.under_thirty == 1: %}
+                        <td>Yes</td>
+                    {% else: %}
+                        <td>No</td>
+                    {% endif %}
+                    <td>{{recipe.user_id.first_name}}</td>
+                    {% if user.id == recipe.user_id.id: %}
+                        <td><a href="/recipes/{{recipe.id}}/view" class="white">View</a>| <a href="/recipes/{{recipe.id}}/edit" class="white">Edit</a> | <a href="/recipes/{{recipe.id}}/delete" class="white">Delete</a></td>
+                    {% else: %}
+                        <td><a href="/recipes/{{recipe.id}}/view" class="white">View</a></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

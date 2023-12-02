@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Share</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}    <!-- declare a variable called messages -->
+    {% if messages %}                               <!-- check if there are any messages -->
+        {% for message in messages %}               <!-- loop through the messages -->
+            <p>{{message}}</p>                      <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="nav-title">
+        <h1 class="title">Recipe Share</h1>
+    </div>
+    <div class="container">
+        <div class="left-container">
+            <div class="box">
+                <p class="register">Register</p>
+                <hr class="solid1">
+                <div class="form">
+                    <form action="/create" method="post" id="form">
+                        <div class="fname">
+                            <label for="first_name" class="label">First Name:</label>
+                            <input type="text" name="first_name" id="first_name">
+                        </div>
+                        <div class="lname">
+                            <label for="last_name" class="label">Last Name:</label>
+                            <input type="text" name="last_name" id="last_name">
+                        </div>
+                        <div class="email">
+                            <label for="email" class="label">Email:</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div class="password">
+                            <label for="password" class="label">Password:</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="confirm">
+                            <label for="confirm" class="label">Confirm Password:</label>
+                            <input type="password" name="confirm" id="confirm">
+                        </div>
+                        <div class="submit">
+                            <button class="submit-button">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="box">
+                <p class="login">Login</p>
+                <hr class="solid2">
+                <div class="form">
+                    <form action="/login" method = 'post' id="form">
+                        <div class="email">
+                            <label for="email" class="label">Email:</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div class="password">
+                            <label for="password" class="label">Password:</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="login">
+                            <button type="submit" class="login-button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

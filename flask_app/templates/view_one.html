@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view_one.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <div class="left-nav">
+            <h2>Welcome {{user.first_name}}</h2>
+            <h1>{{recipe.name}}</h1>
+        </div>
+        <div class="right-nav">
+            <div class="links">
+                <a href="/recipes" class="link">Back To Recipes</a>
+                <a href="/logout" class="link">Logout</a>    
+            </div>
+            <div>
+                <p class="posted-by">Posted by: {{recipe.user_id.first_name}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-container">
+            <div class="description">
+                <p>Description:</p>
+            </div>
+            <div class="under-thirty">
+                <p>Under 30 Minutes?</p>
+            </div>
+            <div class="instructions">
+                <p>Instructions:</p>
+            </div>
+            <div class="date-made">
+                <p>Date Made:</p>
+            </div>
+        </div>
+        <div class="right-container">
+            <p class="inputs">{{recipe.description}}</p>
+            {% if recipe.under_thirty == 1: %}
+                <p class="inputs">Yes</p>
+            {% else: %}
+                <p class="inputs">No</p>
+            {% endif %}
+            <p class="inputs">{{recipe.instructions}}</p>
+            <p class="inputs">{{recipe.date_cooked}}</p>
+        </div>
+    </div>
+</body>
+</html>

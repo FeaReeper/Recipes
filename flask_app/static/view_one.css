@@ -1,0 +1,39 @@
+* {
+    margin: 20px auto;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    width: 1200px;
+    background-color: #34393e;
+}
+
+.right-nav {
+    gap: 50px;
+}
+
+h2, h1, .link, .posted-by {
+    color: #057afe;
+}
+
+.container {
+    width: 1200px;
+    background-color: #34393e;
+    display: flex;
+}
+
+.right-container, .left-container {
+    width: 300px;
+}
+
+.description, .under-thirty, .instructions, .date-made {
+    font-size: 20px;
+    margin: 15px auto;
+}
+
+.inputs {
+    width: 200px;
+    word-wrap: break-word;
+    padding: 5px;
+}
