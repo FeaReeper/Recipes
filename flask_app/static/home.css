@@ -2,8 +2,19 @@
     margin: 20px auto;
 }
 
+.nav-title {
+    display: flex;
+    justify-content: center;
+    background-color: #34393e;
+}
+
 .title {
-    color: orange;
+    color: #057afe;
+    font-size: 50px;
+}
+
+.share {
+    color: #28a644;
     font-size: 50px;
 }
 
@@ -24,6 +35,7 @@
     width: 350px;
     padding: 10px 20px;
     background-color: #34393e;
+    border-radius: 5px;
 }
 
 .register {
